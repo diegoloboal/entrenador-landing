@@ -3,24 +3,23 @@ import Link from "next/link"
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-20 bg-white/70 backdrop-blur-md border-b border-slate-200">
+    <header className="sticky top-0 z-20 border-b border-slate-800 bg-slate-900/70 backdrop-blur-md">
       <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
-        {/* antes: <a href="/" ...> */}
         <Link href="/" className="text-lg font-extrabold tracking-tight">
-          Entrenador<span className="text-blue-600">Pro</span>
+          Entrenador<span className="text-cyan-400">Pro</span>
         </Link>
 
-        <div className="hidden gap-6 text-sm text-slate-700 sm:flex">
-          <a href="#precios" className="hover:text-blue-600">Precios</a>
-          <a href="#reservar" className="hover:text-blue-600">Reservar</a>
-          <a href="#contacto" className="hover:text-blue-600">Contacto</a>
+        <div className="hidden gap-6 text-sm text-slate-300 sm:flex">
+          <a href="#metodo" className="hover:text-cyan-400">Metodo</a>
+          <a href="#programas" className="hover:text-cyan-400">Programas</a>
+          <a href="#contacto" className="hover:text-cyan-400">Contacto</a>
         </div>
 
         <a
-          href="#reservar"
-          className="rounded-full bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+          href="#contacto"
+          className="rounded-full bg-cyan-500 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-cyan-400"
         >
-          Reserva ahora
+          Empezar
         </a>
       </nav>
     </header>
