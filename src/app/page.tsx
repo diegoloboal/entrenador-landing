@@ -3,6 +3,9 @@ import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import Process from "@/components/Process"
 import FAQ from "@/components/FAQ"
+import AboutCoach from "@/components/AboutCoach"
+import ClientIntakeForm from "@/components/ClientIntakeForm"
+
 // (opcional) demo de horarios
 import ScheduleGrid from "@/components/ScheduleGrid"
 
@@ -34,10 +37,26 @@ export default function HomePage() {
       </section>
 
 
+      <AboutCoach />
+
+
       <FAQ />
 
+
+
+      <section id="cuestionario" className="border-t border-slate-800 bg-slate-900 py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <h2 className="text-2xl font-bold">Cuestionario inicial</h2>
+          <p className="mt-2 text-slate-300">Rellena estos datos para poder proponerte el plan adecuado.</p>
+          <div className="mt-6 max-w-3xl">
+            <ClientIntakeForm />
+          </div>
+        </div>
+      </section>
+
+  
       {/* CTA contacto */}
-      <section id="contacto" className="border-t border-slate-800 bg-slate-900 py-14">
+      <section id="contacto" className="border-t border-gray-200 bg-white py-14">
         <div className="mx-auto max-w-6xl px-4 flex flex-col items-center text-center">
           <h2 className="text-2xl font-bold">Listo para empezar?</h2>
           <p className="mt-2 text-slate-300">Escribeme y te envio info + cuestionario inicial.</p>
