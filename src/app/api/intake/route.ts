@@ -38,8 +38,9 @@ export async function POST(req: Request) {
     }
 
     return Response.json({ ok: true })
-  } catch (e: any) {
+  } catch (e: unknown) {
     console.error("[INTAKE] error:", e)
-    return new Response(e?.message || "Error", { status: 500 })
+    const msg = e instanceof Error ? e.message : "Error"
+    return new Response(msg, { status: 500 })
   }
 }

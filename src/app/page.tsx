@@ -6,8 +6,7 @@ import FAQ from "@/components/FAQ"
 import AboutCoach from "@/components/AboutCoach"
 import ClientIntakeForm from "@/components/ClientIntakeForm"
 
-// (opcional) demo de horarios
-import ScheduleGrid from "@/components/ScheduleGrid"
+
 
 export default function HomePage() {
   return (

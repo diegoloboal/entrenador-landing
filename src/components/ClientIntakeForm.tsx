@@ -34,26 +34,28 @@ export default function ClientIntakeForm() {
   const [ok, setOk] = useState<null | boolean>(null)
   const [error, setError] = useState<string | null>(null)
 
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setLoading(true); setOk(null); setError(null)
-    try {
-      const res = await fetch("/api/intake", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      })
-      const txt = await res.text()
-      if (!res.ok) throw new Error(txt)
-      setOk(true)
-      setData(init)
-    } catch (err: any) {
-      setOk(false)
-      setError(err?.message || "Error")
-    } finally {
-      setLoading(false)
-    }
+async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault()
+  setLoading(true); setOk(null); setError(null)
+  try {
+    const res = await fetch("/api/intake", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+    const txt = await res.text()
+    if (!res.ok) throw new Error(txt)
+
+    setOk(true)
+    setData(init)
+  } catch (err: unknown) {
+    setOk(false)
+    setError(err instanceof Error ? err.message : "Error")
+  } finally {
+    setLoading(false)
   }
+}
+
 
   function Input(props: React.InputHTMLAttributes<HTMLInputElement> & { label: string }) {
     const { label, ...rest } = props
